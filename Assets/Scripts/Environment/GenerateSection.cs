@@ -13,7 +13,6 @@ public class GenerateSection : ScriptableObject
     }
     public GameObject Generate()
     {
-        Debug.Log(sections.Length);
         return sections[Random.Range(0, numOfSections)];
     }
 }
