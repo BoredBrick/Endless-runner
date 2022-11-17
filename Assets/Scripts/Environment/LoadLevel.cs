@@ -6,7 +6,7 @@ public class LoadLevel : MonoBehaviour
     {
         GenerateSection generator = ScriptableObject.CreateInstance<GenerateSection>();
         Vector3 position = Vector3.zero;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             generator.CreateSection(position);
             position.z += 50f;

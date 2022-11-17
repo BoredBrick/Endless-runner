@@ -12,7 +12,7 @@ public class DeleteAndCreateSection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Vector3 parentPosition = transform.parent.position;
-            parentPosition.z += 150f;
+            parentPosition.z += 4 * 50f;
             generator.CreateSection(parentPosition);
             Destroy(transform.parent.gameObject);
         }
