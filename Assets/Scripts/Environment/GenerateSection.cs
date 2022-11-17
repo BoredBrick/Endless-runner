@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GenerateSection : ScriptableObject
 {
-    public const int numOfSections = 3;
+    public const int numOfSections = 6;
     public GameObject[] sections = new GameObject[numOfSections];
     public void Awake()
     {
@@ -11,7 +11,13 @@ public class GenerateSection : ScriptableObject
             sections[i] = Resources.Load("Prefabs/Sections/Section" + (i + 1)) as GameObject;
         }
     }
-    public GameObject Generate()
+
+    public void CreateSection(Vector3 position)
+    {
+        Instantiate(Generate(), position, Quaternion.identity);
+    }
+
+    private GameObject Generate()
     {
         return sections[Random.Range(0, numOfSections)];
     }

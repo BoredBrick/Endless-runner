@@ -9,12 +9,11 @@ public class DeleteAndCreateSection : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
         if (other.CompareTag("Player"))
         {
             Vector3 parentPosition = transform.parent.position;
-            parentPosition.z += 100f;
-            Instantiate(generator.Generate(), parentPosition, Quaternion.identity);
+            parentPosition.z += 150f;
+            generator.CreateSection(parentPosition);
             Destroy(transform.parent.gameObject);
         }
     }

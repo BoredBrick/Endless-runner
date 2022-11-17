@@ -8,14 +8,16 @@ public class Points : MonoBehaviour
     public TMP_Text counter;
     void Start()
     {
-        Debug.Log("POITNS" + score);
         StartCoroutine(UpdateScore());
     }
 
     IEnumerator UpdateScore()
     {
-        counter.text = score.ToString();
-        score++;
-        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            counter.text = score.ToString();
+            score++;
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
