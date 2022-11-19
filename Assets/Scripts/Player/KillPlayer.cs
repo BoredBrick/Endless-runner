@@ -6,6 +6,8 @@ public class KillPlayer : MonoBehaviour
     {
         if (obstacle.CompareTag("Player"))
         {
+            GameOver gameOverScreen = GameObject.Find("Scripts").GetComponent<GameOver>();
+            gameOverScreen.Display(Points.score);
         }
     }
 }

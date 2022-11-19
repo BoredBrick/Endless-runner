@@ -2785,6 +2785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51be618d68fe64b439fc06eb750fa416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
 --- !u!1001 &4566170367023996342
 PrefabInstance:
   m_ObjectHideFlags: 0

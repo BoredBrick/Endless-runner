@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    private int score = 0;
+    public static int score = 0;
     public TMP_Text counter;
     void Start()
     {
+        score = 0;
         StartCoroutine(UpdateScore());
     }
 
