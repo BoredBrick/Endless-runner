@@ -14,6 +14,7 @@ public class Countdown : MonoBehaviour
     IEnumerator CountdownTimer()
     {
         Time.timeScale = 0;
+        countdownDisplay.gameObject.SetActive(true);
         while (countdownTime > 0)
         {
             countdownDisplay.text = countdownTime.ToString();

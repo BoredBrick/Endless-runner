@@ -130,11 +130,7 @@ public class MainMenuManager : MonoBehaviour
             backgroundImage.SetNativeSize();
         }
 
-        // Main Color Images
-        for (int i = 0; i < mainColorImages.Length; i++)
-        {
-            mainColorImages[i].color = mainColor;
-        }
+
 
         // Main Color Texts
         for (int i = 0; i < mainColorTexts.Length; i++)
@@ -274,17 +270,10 @@ public class MainMenuManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("Volume"))
         {
             PlayerPrefs.SetFloat("Volume", defaultVolume);
-            LoadVolume();
         }
         else
         {
-            LoadVolume();
         }
-    }
-
-    public void LoadVolume()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume");
     }
 
     public void UIClick()
