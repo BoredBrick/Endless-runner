@@ -1173,7 +1173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalPoints: {fileID: 39693351}
   deathScreen: {fileID: 1729729156}
-  playerMove: {fileID: 0}
+  manager: {fileID: 0}
+  XMLManager: {fileID: 0}
 --- !u!114 &684857321
 MonoBehaviour:
   m_ObjectHideFlags: 0

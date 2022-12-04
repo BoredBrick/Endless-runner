@@ -6,10 +6,16 @@ public class GameOver : MonoBehaviour
 {
     public TMP_Text finalPoints;
     public GameObject deathScreen;
-    public PlayerMove playerMove;
-
+    public HighScoreManager manager;
+    public XMLHighScoreManager XMLManager;
+    public void Awake()
+    {
+        XMLManager = ScriptableObject.CreateInstance<XMLHighScoreManager>();
+        manager = ScriptableObject.CreateInstance<HighScoreManager>();
+    }
     public void Display(int score)
     {
+        manager.AddNewScore(score);
         Time.timeScale = 0;
         deathScreen.SetActive(true);
         finalPoints.text = score.ToString() + " POINTS";
@@ -24,6 +30,7 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
+        XMLManager.SaveScores();
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
     }

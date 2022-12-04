@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class XMLHighScoreManager : MonoBehaviour
+public class XMLHighScoreManager : ScriptableObject
 {
     public static XMLHighScoreManager instance;
     public Leaderboard leaderboard;
@@ -14,10 +14,12 @@ public class XMLHighScoreManager : MonoBehaviour
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/HighScores/");
         }
+
+        HighScore.scores = LoadScores().list;
     }
-    public void SaveScores(Leaderboard scoresToSave)
+    public void SaveScores()
     {
-        leaderboard = scoresToSave;
+        Leaderboard leaderboard = new() { list = HighScore.scores };
         XmlSerializer serializer = new(typeof(Leaderboard));
         FileStream stream = new(Application.persistentDataPath + "/HighScores/highscores.xml", FileMode.Create);
         serializer.Serialize(stream, leaderboard);

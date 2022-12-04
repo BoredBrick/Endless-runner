@@ -92,9 +92,12 @@ public class MainMenuManager : MonoBehaviour
     Resolution[] resolutions;
 
     #endregion
+    public static XMLHighScoreManager instance;
+
 
     void Start()
     {
+        instance = ScriptableObject.CreateInstance<XMLHighScoreManager>();
         SetStartUI();
         ProcessLinks();
         SetStartVolume();
@@ -130,13 +133,6 @@ public class MainMenuManager : MonoBehaviour
             backgroundImage.SetNativeSize();
         }
 
-
-
-        // Main Color Texts
-        for (int i = 0; i < mainColorTexts.Length; i++)
-        {
-            mainColorTexts[i].color = mainColor;
-        }
 
         // Secondary Color Images
         for (int i = 0; i < secondaryColorImages.Length; i++)
@@ -244,6 +240,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Quit()
     {
+        instance.SaveScores();
 #if UNITY_STANDALONE
         Application.Quit();
 #endif
