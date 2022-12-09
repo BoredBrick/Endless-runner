@@ -2219,6 +2219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 9
   sideSpeed: 4
+  jumpForce: 10
 --- !u!54 &1971201905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2245,7 +2246,7 @@ Animator:
   m_GameObject: {fileID: 1971201899}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7f4e275a8bf71d4890576f4637baabc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
