@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7630532967023069138}
   - component: {fileID: 6157438543878130262}
   - component: {fileID: 3443496373353081929}
+  - component: {fileID: 440668573831096084}
   m_Layer: 0
   m_Name: ObstacleLog1
   m_TagString: Untagged
@@ -98,6 +99,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &440668573831096084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5358690284510895260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51be618d68fe64b439fc06eb750fa416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1217812643313441988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +180,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0761e9c9debdfd34fa20f5859c6f08ff, type: 3}
+--- !u!1 &1216812198521764830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1255758057252634, guid: 0761e9c9debdfd34fa20f5859c6f08ff, type: 3}
+  m_PrefabInstance: {fileID: 1217812643313441988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5775982756293152700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216812198521764830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51be618d68fe64b439fc06eb750fa416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1218476451859962078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4063541705819162, guid: 0761e9c9debdfd34fa20f5859c6f08ff, type: 3}

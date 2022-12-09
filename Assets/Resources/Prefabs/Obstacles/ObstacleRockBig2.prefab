@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8753870629460912030}
   - component: {fileID: 6913328575448482229}
   - component: {fileID: 1985312776491825777}
+  - component: {fileID: 3654234464268159088}
   m_Layer: 0
   m_Name: ObstacleRockBig2
   m_TagString: Untagged
@@ -93,11 +94,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2607000264321836881}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3654234464268159088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607000264321836881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51be618d68fe64b439fc06eb750fa416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &616295011111642103
 PrefabInstance:
   m_ObjectHideFlags: 0
