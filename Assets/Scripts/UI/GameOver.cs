@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
 {
     public TMP_Text finalPoints;
     public GameObject deathScreen;
+    public LevelAudio audioManager;
     private HighScore manager;
     private XMLHighScoreManager XMLManager;
     public void Awake()
@@ -15,6 +16,7 @@ public class GameOver : MonoBehaviour
     }
     public void Display(int score)
     {
+        audioManager.Death();
         manager.AddNewScore(Points.score);
         Time.timeScale = 0;
         deathScreen.SetActive(true);
