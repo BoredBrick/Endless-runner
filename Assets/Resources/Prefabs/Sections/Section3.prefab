@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree: {fileID: 7939043149910539127}
+  finalRotation: {x: -0.4568891, y: -0.53712106, z: -0.5041346, w: 0.49859962}
 --- !u!1 &2068727380773875922
 GameObject:
   m_ObjectHideFlags: 0
