@@ -6,16 +6,16 @@ public class GameOver : MonoBehaviour
 {
     public TMP_Text finalPoints;
     public GameObject deathScreen;
-    public HighScoreManager manager;
-    public XMLHighScoreManager XMLManager;
+    private HighScore manager;
+    private XMLHighScoreManager XMLManager;
     public void Awake()
     {
+        manager = ScriptableObject.CreateInstance<HighScore>();
         XMLManager = ScriptableObject.CreateInstance<XMLHighScoreManager>();
-        manager = ScriptableObject.CreateInstance<HighScoreManager>();
     }
     public void Display(int score)
     {
-        manager.AddNewScore(score);
+        manager.AddNewScore(Points.score);
         Time.timeScale = 0;
         deathScreen.SetActive(true);
         finalPoints.text = score.ToString() + " POINTS";
@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
+        XMLManager.SaveScores();
         SceneManager.LoadScene("InfinityRunner");
         Points.score = 0;
         Time.timeScale = 1;

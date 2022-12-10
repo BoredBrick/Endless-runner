@@ -6,6 +6,7 @@ public class Countdown : MonoBehaviour
 {
     public int countdownTime;
     public TMP_Text countdownDisplay;
+    public static bool isPlaying = false;
     void Start()
     {
         StartCoroutine(CountdownTimer());
@@ -28,6 +29,6 @@ public class Countdown : MonoBehaviour
         Time.timeScale = 1;
 
         countdownDisplay.gameObject.SetActive(false);
-
+        isPlaying = true;
     }
 }

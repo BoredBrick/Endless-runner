@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class HighScoreDisplay : MonoBehaviour
+public class HighScoreDisplayRow : MonoBehaviour
 {
     public TMP_Text scoreText;
     public void DisplayHighScore(int score)

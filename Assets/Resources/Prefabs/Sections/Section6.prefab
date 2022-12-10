@@ -342,7 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree: {fileID: 1433429621261099665}
-  rightSideFall: 1
+  rightSideFall: 0
+  randomFall: 1
 --- !u!1 &8298362693671175879
 GameObject:
   m_ObjectHideFlags: 0

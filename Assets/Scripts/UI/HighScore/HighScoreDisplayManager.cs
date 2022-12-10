@@ -1,11 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HighScore : MonoBehaviour
+public class HighScoreDisplayManager : MonoBehaviour
 {
-    public static List<int> scores = new();
-    public const int MAX_SCORES = 5;
-    public HighScoreDisplay[] highScoreDisplayArray;
+    public HighScoreDisplayRow[] highScoreDisplayArray;
 
     public void Awake()
     {
@@ -15,9 +12,9 @@ public class HighScore : MonoBehaviour
     {
         for (int i = 0; i < highScoreDisplayArray.Length; i++)
         {
-            if (i < scores.Count)
+            if (i < HighScore.Scores.Count)
             {
-                highScoreDisplayArray[i].DisplayHighScore(scores[i]);
+                highScoreDisplayArray[i].DisplayHighScore(HighScore.Scores[i]);
             }
             else
             {
