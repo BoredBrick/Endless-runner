@@ -18,10 +18,5 @@ public class HighScore : ScriptableObject
         {
             Scores.RemoveAt(Constants.MaxStoredScores);
         }
-        Debug.Log("VYSLEDKY PO PRIDANI");
-        foreach (var item in Scores)
-        {
-            Debug.Log(item);
-        }
     }
 }
