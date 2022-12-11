@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class AddPoints : MonoBehaviour
@@ -10,7 +11,7 @@ public class AddPoints : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             audioSource = GameObject.FindGameObjectWithTag("Scripts").GetComponent<AudioSource>();
-            Points.score += PointsToAdd;
+            Points.score += PointsToAdd * Constants.PointsMultiplier;
             audioSource.PlayOneShot(pickUpSound);
             gameObject.SetActive(false);
         }

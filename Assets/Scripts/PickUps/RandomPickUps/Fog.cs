@@ -13,20 +13,18 @@ public class Fog : BasePickUp
 
     IEnumerator FogFade()
     {
-        while (true)
+        while (RenderSettings.fogDensity <= effectFogDensity)
         {
-            Debug.Log(RenderSettings.fogDensity <= effectFogDensity);
-            Debug.Log(RenderSettings.fogDensity);
-            RenderSettings.fogDensity += 0.01f * Time.deltaTime;
-            Debug.Log(RenderSettings.fogDensity);
-            Debug.Log(RenderSettings.fogDensity <= effectFogDensity);
+            RenderSettings.fogDensity += 0.1f * Time.deltaTime;
+            yield return null;
         }
 
         yield return new WaitForSecondsRealtime(10);
 
         while (RenderSettings.fogDensity >= defaultFogDensity)
         {
-            RenderSettings.fogDensity -= 0.011f * Time.deltaTime;
+            RenderSettings.fogDensity -= 0.1f * Time.deltaTime;
+            yield return null;
         }
         yield return null;
     }

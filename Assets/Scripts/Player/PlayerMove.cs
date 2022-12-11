@@ -1,13 +1,15 @@
+using Assets.Scripts;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 3;
+    public static float moveSpeed = Constants.defaultMoveSpeed;
     public float sideSpeed = 4;
     public float jumpForce = 13;
     public Animator animator;
     private BoxCollider colliderBox;
+    private bool jumpCooldownFinished = true;
 
     private void Awake()
     {
@@ -39,13 +41,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            if (gameObject.transform.position.y <= 1.26)
+            if (gameObject.transform.position.y <= 1.26 && jumpCooldownFinished)
             {
+                jumpCooldownFinished = false;
                 animator.SetTrigger("jump");
                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 colliderBox.center = new Vector3(colliderBox.center.x, 0.44f, colliderBox.center.z);
                 colliderBox.size = new Vector3(colliderBox.size.x, 0.7f, colliderBox.size.z);
                 StartCoroutine(ChangeColliderAfterAnimation(0.52f));
+                StartCoroutine(JumpCooldown());
             }
         }
 
@@ -60,5 +64,11 @@ public class PlayerMove : MonoBehaviour
         }
         colliderBox.center = new Vector3(colliderBox.center.x, 0.03274205f, colliderBox.center.z);
         colliderBox.size = new Vector3(colliderBox.size.x, 1.065485f, colliderBox.size.z);
+    }
+
+    IEnumerator JumpCooldown()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        jumpCooldownFinished = true;
     }
 }

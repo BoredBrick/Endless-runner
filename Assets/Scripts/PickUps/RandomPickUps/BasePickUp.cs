@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasePickUp : MonoBehaviour
+public abstract class BasePickUp : MonoBehaviour
 {
-    public virtual void StartEffect() { }
+    public abstract void StartEffect();
 }

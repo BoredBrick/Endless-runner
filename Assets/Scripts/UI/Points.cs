@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Points : MonoBehaviour
     void Start()
     {
         score = 0;
+        Constants.PointsMultiplier = 1;
         StartCoroutine(UpdateScore());
     }
 
@@ -17,7 +19,7 @@ public class Points : MonoBehaviour
         while (true)
         {
             counter.text = score.ToString();
-            score++;
+            score += Constants.PointsMultiplier;
             yield return new WaitForSeconds(1f);
         }
     }
