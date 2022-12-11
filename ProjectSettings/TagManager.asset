@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameOverScreen
   - FallingTree
+  - Scripts
   layers:
   - Default
   - TransparentFX

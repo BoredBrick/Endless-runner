@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChangeMultiplier : BasePickUp
 {
+    public override string PickUpName { get => "2X SCORE MULTIPLIER"; }
+
     public override void StartEffect()
     {
-        Debug.Log(Constants.PointsMultiplier);
         Constants.PointsMultiplier *= 2;
-        Debug.Log(Constants.PointsMultiplier);
         StartCoroutine(Wait());
     }
 
