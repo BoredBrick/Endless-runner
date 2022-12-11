@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
+        moveSpeed = Constants.defaultMoveSpeed;
+        jumpForce = Constants.defaultJumpForce;
         animator = GetComponentInChildren<Animator>();
         colliderBox = gameObject.GetComponent<BoxCollider>();
     }
