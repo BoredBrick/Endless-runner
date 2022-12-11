@@ -14,7 +14,7 @@ public class GenerateSection : ScriptableObject
 
     public void CreateSection(Vector3 position)
     {
-        Instantiate(Generate(), position, Quaternion.identity);
+        Instantiate(sections[0], position, Quaternion.identity);
     }
 
     private GameObject Generate()

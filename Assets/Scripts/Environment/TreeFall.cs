@@ -14,7 +14,7 @@ public class TreeFall : MonoBehaviour
     {
         if (obstacle.CompareTag("Player"))
         {
-            if (Random.value <= 0.5)
+            if (Random.value <= 0.75)
             {
                 falling = true;
                 if (randomFall)

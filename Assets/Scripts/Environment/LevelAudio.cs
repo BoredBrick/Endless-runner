@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class LevelAudio : MonoBehaviour
@@ -6,13 +7,19 @@ public class LevelAudio : MonoBehaviour
     public AudioClip[] audioClips;
     void Start()
     {
-        audioSource.volume = 0.09f;
+        audioSource.loop = true;
+        audioSource.volume = Constants.defaultVolume;
         audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
         audioSource.Play();
     }
 
-    public void Death()
+    public void HalfVolume()
     {
-        audioSource.volume = 0.045f;
+        audioSource.volume = Constants.defaultVolume / 2;
+    }
+
+    public void DefaultVolume()
+    {
+        audioSource.volume = Constants.defaultVolume;
     }
 }

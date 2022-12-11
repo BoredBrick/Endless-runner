@@ -16,7 +16,7 @@ public class GameOver : MonoBehaviour
     }
     public void Display(int score)
     {
-        audioManager.Death();
+        audioManager.HalfVolume();
         manager.AddNewScore(Points.score);
         Time.timeScale = 0;
         deathScreen.SetActive(true);
