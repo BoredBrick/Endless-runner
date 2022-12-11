@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public static float moveSpeed = Constants.defaultMoveSpeed;
     public float sideSpeed = 4;
-    public float jumpForce = 13;
+    public static float jumpForce = Constants.defaultJumpForce;
     public Animator animator;
     private BoxCollider colliderBox;
     private bool jumpCooldownFinished = true;
